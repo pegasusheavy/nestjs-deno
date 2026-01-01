@@ -1,5 +1,5 @@
 {
-  "name": "@pegasus-heavy/nestjs-platform-deno",
+  "name": "@pegasusheavy/nestjs-platform-deno",
   "version": "0.1.0",
   "description": "NestJS HTTP adapter for the Deno runtime using Deno.serve",
   "author": "Pegasus Heavy Industries LLC",
