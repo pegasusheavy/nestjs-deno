@@ -1,0 +1,96 @@
+{
+  "name": "@pegasus-heavy/nestjs-platform-deno",
+  "version": "0.1.0",
+  "description": "NestJS HTTP adapter for the Deno runtime using Deno.serve",
+  "author": "Pegasus Heavy Industries LLC",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "vitest run --config vitest.config.e2e.ts",
+    "test:e2e:watch": "vitest --config vitest.config.e2e.ts",
+    "test:e2e:coverage": "vitest run --config vitest.config.e2e.ts --coverage",
+    "test:all": "vitest run --config vitest.config.all.ts",
+    "test:all:coverage": "vitest run --config vitest.config.all.ts --coverage",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "benchmark": "tsx benchmark/adapter-benchmark.ts",
+    "prepare": "husky",
+    "prepublishOnly": "pnpm run build"
+  },
+  "keywords": [
+    "nestjs",
+    "deno",
+    "adapter",
+    "http",
+    "server",
+    "platform",
+    "nest",
+    "framework"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PegasusHeavyIndustries/nestjs-deno"
+  },
+  "bugs": {
+    "url": "https://github.com/PegasusHeavyIndustries/nestjs-deno/issues"
+  },
+  "homepage": "https://github.com/PegasusHeavyIndustries/nestjs-deno#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^10.0.0 || ^11.0.0",
+    "@nestjs/core": "^10.0.0 || ^11.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/platform-express": "^11.1.11",
+    "@nestjs/platform-fastify": "^11.1.11",
+    "@nestjs/testing": "^11.1.11",
+    "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^2.1.9",
+    "autocannon": "^8.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^10.0.0",
+    "express": "^5.2.1",
+    "fastify": "^5.6.2",
+    "husky": "^9.0.0",
+    "lint-staged": "^16.0.0",
+    "reflect-metadata": "^0.2.0",
+    "rxjs": "^7.8.0",
+    "tinybench": "^6.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^2.0.0"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "eslint --fix"
+    ]
+  },
+  "packageManager": "pnpm@10.26.2"
+}

@@ -1,0 +1,45 @@
+# Source files (dist is published)
+src/
+
+# Tests
+test/
+*.test.ts
+*.spec.ts
+vitest.config.ts
+vitest.config.e2e.ts
+vitest.config.all.ts
+coverage/
+
+# Benchmarks
+benchmark/
+
+# Development configs
+.husky/
+.eslintrc*
+eslint.config.js
+tsconfig.json
+tsup.config.ts
+.prettierrc*
+.editorconfig
+
+# Git
+.git/
+.gitignore
+.github/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.cursor/
+
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+
+# Misc
+*.log
+*.tgz
+.DS_Store
+Thumbs.db
