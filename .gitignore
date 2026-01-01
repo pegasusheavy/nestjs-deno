@@ -33,3 +33,4 @@ coverage/
 
 # Deno
 .deno/
+pnpm-workspace.yaml
