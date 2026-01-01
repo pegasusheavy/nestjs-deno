@@ -50,12 +50,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/PegasusHeavyIndustries/nestjs-deno"
+    "url": "https://github.com/pegasusheavy/nestjs-deno"
   },
   "bugs": {
-    "url": "https://github.com/PegasusHeavyIndustries/nestjs-deno/issues"
+    "url": "https://github.com/pegasusheavy/nestjs-deno/issues"
   },
-  "homepage": "https://github.com/PegasusHeavyIndustries/nestjs-deno#readme",
+  "homepage": "https://github.com/pegasusheavy/nestjs-deno#readme",
   "engines": {
     "node": ">=18.0.0"
   },
