@@ -38,6 +38,9 @@
     "prepare": "husky",
     "prepublishOnly": "pnpm run build"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "nestjs",
     "deno",
