@@ -1,0 +1,176 @@
+/* Import Google Fonts - must be first */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* NestJS Theme Colors */
+  --color-nest-red: #E0234E;
+  --color-nest-red-dark: #B81D3F;
+  --color-nest-red-light: #F25672;
+
+  /* Dark theme */
+  --color-dark-900: #0a0a0f;
+  --color-dark-800: #111118;
+  --color-dark-700: #181820;
+  --color-dark-600: #1e1e28;
+  --color-dark-500: #252530;
+  --color-dark-400: #363644;
+  --color-dark-300: #4a4a5a;
+
+  /* Light theme */
+  --color-light-50: #fafafa;
+  --color-light-100: #f5f5f5;
+  --color-light-200: #e5e5e5;
+  --color-light-300: #d4d4d4;
+
+  /* Text colors */
+  --color-text-primary: #f8f8f2;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
+
+  /* Accent colors for code */
+  --color-code-green: #50fa7b;
+  --color-code-purple: #bd93f9;
+  --color-code-cyan: #8be9fd;
+  --color-code-orange: #ffb86c;
+  --color-code-yellow: #f1fa8c;
+  --color-code-pink: #ff79c6;
+
+  /* Fonts */
+  --font-display: "Cabinet Grotesk", "Satoshi", system-ui, sans-serif;
+  --font-body: "Satoshi", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-nest-red) 0%, var(--color-nest-red-light) 50%, var(--color-code-pink) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-red {
+    box-shadow: 0 0 20px rgba(224, 35, 78, 0.3), 0 0 40px rgba(224, 35, 78, 0.1);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 30px rgba(224, 35, 78, 0.5);
+  }
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-dark-900);
+  color: var(--color-text-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-800);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-400);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dark-300);
+}
+
+/* Code block styling */
+pre {
+  background: var(--color-dark-800) !important;
+  border: 1px solid var(--color-dark-500);
+  border-radius: 12px;
+  padding: 1.25rem;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+}
+
+:not(pre) > code {
+  background: var(--color-dark-600);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  color: var(--color-nest-red-light);
+}
+
+/* Selection */
+::selection {
+  background: rgba(224, 35, 78, 0.3);
+  color: white;
+}
+
+/* Links */
+a {
+  transition: color 0.2s ease;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Animation keyframes */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(224, 35, 78, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(224, 35, 78, 0.5); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.4s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Stagger animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
